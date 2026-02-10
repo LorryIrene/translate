@@ -76,12 +76,22 @@ def correct_sentence_ai(user_sentence):
 
 def display_wordcloud(text):
     """生成并返回词云图表对象"""
-    # 增加中文字体支持（如果需要）
+    # 定义字体文件名
+    font_file = 'simhei.ttf'
+    
+    # 检查当前目录下是否存在该字体文件
+    if os.path.exists(font_file):
+        custom_font = font_file
+    else:
+        # 如果没有找到字体文件，则使用默认设置（可能会乱码）
+        custom_font = None
+        st.warning("未检测到字体文件，中文词云可能显示异常。")
+
     wc = WordCloud(
         width=800, 
         height=400, 
         background_color='white',
-        font_path='simhei.ttf' if os.path.exists('simhei.ttf') else None 
+        font_path=custom_font  # 使用我们指定的字体
     ).generate(text)
     
     fig, ax = plt.subplots(figsize=(10, 5))
