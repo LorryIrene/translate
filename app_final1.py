@@ -11,9 +11,9 @@ import os
 # --- 1. 安全配置 ---
 # 建议在本地创建 .env 文件或在 GitHub Secrets 中配置
 # 这里尝试从环境变量读取，如果没有则提示用户输入
-YOUDAO_APP_KEY = st.secrets.get("YOUDAO_APP_KEY", "你的APP_KEY")
-YOUDAO_APP_SECRET = st.secrets.get("YOUDAO_APP_SECRET", "你的APP_SECRET")
-ZHIPU_API_KEY = st.secrets.get("ZHIPU_API_KEY", "你的API_KEY")
+YOUDAO_APP_KEY = st.secrets.get()
+YOUDAO_APP_SECRET = st.secrets.get()
+ZHIPU_API_KEY = st.secrets.get()
 
 # 初始化客户端
 if ZHIPU_API_KEY:
