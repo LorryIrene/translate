@@ -1,0 +1,5 @@
+zhipuai
+requests
+streamlit
+wordcloud
+matplotlib
